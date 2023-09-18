@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lightweight vanilla js modal component (just 2kb)</title>
+    <link rel="stylesheet" href="src/modal.css" />
+    <script src="src/modal.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        background: #daebf7;
+        padding: 100px 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #003b57;
+      }
+      button {
+        color: #fff;
+        background-color: #259cd4;
+        border-color: #259cd4;
+        height: 42px;
+        text-align: center;
+        font-size: 14px;
+        padding: 0 30px;
+        width: 150px;
+        margin-top: 50px;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+      .content {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <center>
+        <h1>Lightweight vanilla js modal component</h1>
+        <p>
+          This is just 2kb Lightweight vanilla js modal component with zero
+          dependencies , with option esc close , outside click close , tab key
+          focus inside Modal custom height , widht : check code in github :
+          <a href="https://github.com/idurar/vanilla-js-modal">
+            vanilla js modal github repo</a
+          >
+        </p>
+        <button class="openModal">Open Modal</button>
+      </center>
+    </div>
+
+    <div id="delete-record" style="display: none">
+      <div class="popup-container">
+        <p>your Modal content here !</p>
+        <input
+          type="text"
+          style="float: left; margin-right: 20px; height: 35px"
+        />
+        <button class="closeModal" style="margin: 0">close Modal</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    modal.init();
+    document
+      .querySelector(".openModal")
+      .addEventListener("click", function (e) {
+        modal.open("delete-record");
+      });
+  </script>
+</html>
